@@ -1,0 +1,11 @@
+{
+  "development": {
+    "CLIENT_ID": "get-this-from-YELP",
+    "API_KEY": "get-this-from-YELP",
+    "APP_NAME": "SomeName",
+    "HOST": "",
+    "DATABASE": "",
+    "USER": "",
+    "PASSWORD": ""
+  }
+}
