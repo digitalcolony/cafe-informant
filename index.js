@@ -62,6 +62,7 @@ connection.connect(function(err) {
           });
       });
     });
+    connection.end();
   });
 
   const updateVenues = (connection, venueID, yelpID) => {
@@ -73,7 +74,3 @@ connection.connect(function(err) {
     });
   };
 });
-//connection.end();
-
-//HELP: Works unless I use connection.end().
-//There needs to be a cleaner way to do this. Will research.
