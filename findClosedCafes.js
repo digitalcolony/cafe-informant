@@ -62,7 +62,7 @@ connection.connect(function(err) {
           });
       });
     });
-    connection.end();
+    //connection.end();
   });
 
   const updateVenues = (connection, venueID, yelpID) => {

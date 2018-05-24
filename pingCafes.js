@@ -20,7 +20,7 @@ connection.connect(function(err) {
   }
 
   const queryCafesWithYelpIDs =
-    "SELECT venueName, yelpID FROM venuesclean WHERE yelpID IS NOT NULL AND  venueStatus != yelpStatus";
+    "SELECT venueName, yelpID FROM venuesclean WHERE yelpID IS NOT NULL";
 
   connection.query(queryCafesWithYelpIDs, (error, result, fields) => {
     Object.keys(result).forEach(function(key) {
