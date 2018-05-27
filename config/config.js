@@ -8,3 +8,9 @@ if (env === "development") {
     process.env[key] = envConfig[key];
   });
 }
+
+const envConfig2 = config["ftp_settings"];
+
+Object.keys(envConfig2).forEach(key => {
+  process.env[key] = envConfig2[key];
+});
