@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const mysql = require("mysql");
 const yelp = require("./lib/yelp-api");
 
 const search = {
@@ -33,8 +32,5 @@ app.get("/", function(req, res) {
 });
 
 const server = app.listen(8081, function() {
-  const host = server.address().address;
-  const port = server.address().port;
-
-  console.log("Example app listening at http://%s:%s", host, port);
+  console.log("Example app listening at http://localhost:8081");
 });
