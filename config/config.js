@@ -10,7 +10,11 @@ if (env === "development") {
 }
 
 const envConfig2 = config["ftp_settings"];
-
 Object.keys(envConfig2).forEach(key => {
   process.env[key] = envConfig2[key];
+});
+
+const envConfig3 = config["email_settings"];
+Object.keys(envConfig3).forEach(key => {
+  process.env[key] = envConfig3[key];
 });

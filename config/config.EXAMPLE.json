@@ -7,5 +7,14 @@
     "DATABASE": "",
     "USER": "",
     "PASSWORD": ""
+  },
+  "ftp_settings": {
+    "FTP_HOST": "",
+    "FTP_USER": "",
+    "FTP_PASSWORD": ""
+  },
+  "email_settings": {
+    "EMAIL": "",
+    "EMAIL_PASSWORD": ""
   }
 }
