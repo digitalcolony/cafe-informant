@@ -51,7 +51,7 @@ const emailMichael = async () => {
     from: process.env["EMAIL"],
     to: process.env["EMAIL"],
     subject: "Cafe Informant",
-    text: "Job executed!"
+    text: "Job executed! => https://coffeeclub.app/leads.php"
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
