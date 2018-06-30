@@ -4,20 +4,20 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 require("./config/config");
 
-const search = {
-  categories: `coffee`,
-  location: `98113`
-};
+const category = `coffee`;
+const locations = [`98003`, `98133`];
+//const locations = [`98113`, `98133`];
 
 const localFile = "./report/newcafes.json";
 const serverFile = "/public_html/coffeeclub.app/i/newcafes.json";
 
-const getNewCafeData = async () => {
-  yelp
-    .search_new_businesses(search.categories, search.location)
-    .then(businesses => {
-      fs.writeFileSync(localFile, JSON.stringify(businesses));
-    });
+const getNewCafeData = async (category, location) => {
+  yelp.search_new_businesses(category, location).then(businesses => {
+    fs.writeFileSync(
+      `./report/newcafes${location}.json`,
+      JSON.stringify(businesses)
+    );
+  });
 };
 
 const uploadNewCafeData = async () => {
@@ -64,9 +64,12 @@ const emailMichael = async () => {
 };
 
 const runReport = async () => {
-  const goYelp = await getNewCafeData();
-  const goFTP = await uploadNewCafeData();
-  const goEmail = await emailMichael();
+  locations.forEach(location => {
+    getNewCafeData(category, location);
+  });
+
+  //const goFTP = await uploadNewCafeData();
+  // const goEmail = await emailMichael();
 };
 
 runReport();

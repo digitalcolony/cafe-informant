@@ -4,7 +4,7 @@ const yelp = require("./lib/yelp-api");
 
 const search = {
   categories: `coffee`,
-  location: `98003`
+  location: `98133`
 };
 
 app.get("/", function(req, res) {
