@@ -4,13 +4,29 @@ const fs = require("fs");
 const nodemailer = require("nodemailer");
 require("./config/config");
 
+// Yelp is funny, it will return different results when you mix up the zip code that
+// may or may not be related to the distance of the business to that zip code.
+// So, this code will cycle through various zips on different days of the week.
+
+// downtown   98101
+// Shoreline  98155
+// Bellevue   98007
+// Tacoma     98401
+// Ballard    98107
+// W. Seattle 98116
+// UW         98195
+
+let d = new Date();
+let n = d.getDay();
+const zips = [`98101`, `98155`, `98007`, `98401`, `98107`, `98116`, `98195`];
+
 const search = {
   categories: `coffee`,
-  location: `98113`
+  location: zips[n]
 };
 
 const localFile = "./report/newcafes.json";
-const serverFile = "/public_html/coffeeclub.app/i/newcafes.json";
+const serverFile = "/public_html/coffeeclub.app/src/data/newcafes.json";
 
 const getNewCafeData = async () => {
   yelp
