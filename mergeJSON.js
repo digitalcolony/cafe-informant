@@ -11,7 +11,7 @@ fs.readdir(JSONfolder, function(err, list) {
       let thisJSON = JSON.parse(data);
       for (let i = 0; i < thisJSON.businesses.length; i++) {
         let thisCafe = thisJSON.businesses[i];
-        console.log(thisCafe.alias);
+        console.log(i, thisCafe.alias);
       }
     });
   });
