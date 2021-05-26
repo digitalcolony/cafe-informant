@@ -26,7 +26,7 @@ const search = {
 };
 
 const localFile = "./report/newcafes.json";
-const serverFile = "/public_html/coffeeclub.app/src/data/newcafes.json";
+const serverFile = "/coffeeclub.app/public_html/src/data/newcafes.json";
 
 const getNewCafeData = async () => {
   yelp
@@ -82,7 +82,7 @@ const emailMichael = async () => {
 const runReport = async () => {
   const goYelp = await getNewCafeData();
   const goFTP = await uploadNewCafeData();
-  const goEmail = await emailMichael();
+ // const goEmail = await emailMichael();
 };
 
 runReport();
